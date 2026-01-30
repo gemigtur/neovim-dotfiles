@@ -5,7 +5,7 @@ vim.opt.shell = "fish"
 local o = vim.o
 
 -- Scroll offset - always keep lines visible above/below cursor
-o.scrolloff = 999
+--o.scrolloff = 999
 o.sidescrolloff = 8
 
 --Relative line numbers
