@@ -48,7 +48,33 @@ return {
         disable_on_mouse = true,
       })
     end
-  }
+  },
+
+  {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  lazy = false,
+  config = function()
+    require("nvim-treesitter").setup({
+      ensure_installed = {
+        "lua",
+        "vim",
+        "vimdoc",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "html",
+        "css"
+      },
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    })
+  end,
+}
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },

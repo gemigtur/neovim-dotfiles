@@ -1,7 +1,7 @@
 require "nvchad.options"
 
 -- add yours here!
-vim.opt.shell = "fish"
+-- vim.opt.shell = "fish"
 local o = vim.o
 
 -- Scroll offset - always keep lines visible above/below cursor
