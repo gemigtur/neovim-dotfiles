@@ -40,7 +40,7 @@ return {
   {
     "arnamak/stay-centered.nvim",
     lazy = false,
-    config = function() 
+    config = function()
       require("stay-centered").setup({
         skip_filetypes = {},
         enabled = true,
@@ -65,7 +65,8 @@ return {
         "tsx",
         "json",
         "html",
-        "css"
+        "css",
+        "python",
       },
       auto_install = true,
       highlight = {

@@ -8,6 +8,7 @@ vim.lsp.enable({
   "cssls",
   "tsserver", -- 👈 JavaScript / TypeScript / Node
   "gopls",
+  "basedpyright",
 })
 
 -- custom config for tsserver
@@ -46,6 +47,20 @@ vim.lsp.config.gopls = {
       gofumpt = true,
     },
   },
+}
+
+vim.lsp.config.basedpyright = {
+  cmd = { "basedpyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_dir = vim.fs.root(0, {
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+    "requirements.txt",
+    "Pipfile",
+    "pyrightconfig.json",
+    ".git",
+  }),
 }
 
 --local servers = { "html", "cssls" }
