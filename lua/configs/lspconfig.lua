@@ -26,6 +26,12 @@ vim.lsp.config.tsserver = {
     "jsconfig.json",
     ".git",
   }),
+  -- Disable dynamic file watching to avoid watchdog/timeout errors on large dirs
+  capabilities = (function()
+    local caps = vim.lsp.protocol.make_client_capabilities()
+    caps.workspace.didChangeWatchedFiles.dynamicRegistration = false
+    return caps
+  end)(),
 }
 
 -- cusom config for go 

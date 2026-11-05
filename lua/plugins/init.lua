@@ -75,7 +75,17 @@ return {
       },
     })
   end,
-}
+  },
+
+  -- Increase nvim-tree git timeout to avoid "timed out after 400ms" errors
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        timeout = 5000,
+      },
+    },
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
