@@ -5,6 +5,21 @@ return {
     opts = require "configs.conform",
   },
 
+  -- Rung PLC integrating
+  {
+    "sa1ntsinner/rung",
+    lazy = false,
+    config = function(plugin)
+      -- Load the Neovim integraation include in the Rung repository
+      vim.opt.rtp:append(plugin.dir .. "/editors/neovim")
+
+      require("rung").setup({
+        cmd = { "rung" },
+        test_on_save = false,
+      })
+    end,
+  },
+
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -50,6 +65,7 @@ return {
     end
   },
 
+  -- Neovim treesitter plugin
   {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
